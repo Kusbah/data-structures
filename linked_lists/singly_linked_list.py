@@ -108,7 +108,16 @@ class LinkedList:
             temp.next = befor
             befor = temp
             temp = after
-            
+    def findKtNode(self,k):
+        fast = slow = self.head
+        for _ in range(k):
+            if fast is None:
+                return None
+            fast = fast.next
+        while fast:
+            slow = slow.next
+            fast = fast.next
+        return print(slow.value)
 
 
 linkedlist = LinkedList(5)
@@ -116,5 +125,5 @@ linkedlist.append(4)
 linkedlist.append(48)
 linkedlist.prepend(89)
 linkedlist.insert(4,122)
-linkedlist.reverse()
+
 linkedlist.print_list()
